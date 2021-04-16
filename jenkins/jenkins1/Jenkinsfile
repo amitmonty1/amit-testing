@@ -9,7 +9,7 @@ pipeline{
                 deleteDir()
                 
                 checkout scm
-                myScript()
+                holyCrap()
                 echo "dude 12"
             }
         }
