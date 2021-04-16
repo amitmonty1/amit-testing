@@ -1,10 +1,13 @@
 #!groovy
 @Library('amitdude') _
-
+parameter{
+    choice{name:"version",choices:["1.0.1","1.0.2"],description:"dude"}
+    booleanParam(name: "checkflag", defaultValue: true)
+}
 pipeline{
     agent any
     stages{
-        stage("dude"){
+        stage("get repo and shared"){
             steps{
                 deleteDir()
                 
@@ -12,6 +15,32 @@ pipeline{
                 holyCrap()
                 echo "dude 12"
             }
+        }
+        stage("build"){
+            steps{
+              if(checkflag) { 
+                echo "build me"
+              }
+              else{
+                  echo "kill me"
+              }
+            }
+        }
+        stage("deploy"){
+            steps{
+                echo "deply me"
+            }
+        }
+    }
+    post{
+        success{
+            echo "deply me"
+        }
+        always{
+            echo "always me"
+        }
+        failure{
+            echo "failure me"
         }
     }
 }
