@@ -1,5 +1,5 @@
 #!groovy
-import jenkins.scripts.script
+import jenkins.scripts.MyScript
 @Library('amitdude') _
 
 pipeline{
