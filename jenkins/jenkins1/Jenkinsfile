@@ -1,11 +1,12 @@
 #!groovy
 @Library('amitdude') _
-parameter{
-    choice{name:"version",choices:["1.0.1","1.0.2"],description:"dude"}
-    booleanParam(name: "checkflag", defaultValue: true)
-}
+
 pipeline{
     agent any
+    parameter{
+        choice{name:"version",choices:["1.0.1","1.0.2"],description:"dude"}
+        booleanParam(name: "checkflag", defaultValue: true)
+    }    
     stages{
         stage("get repo and shared"){
             steps{
