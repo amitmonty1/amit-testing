@@ -1,3 +1,4 @@
+#!groovy
 import jenkins.scripts.script
 @Library('amitdude') _
 
