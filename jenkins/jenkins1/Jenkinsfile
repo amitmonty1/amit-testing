@@ -3,10 +3,11 @@
 
 pipeline{
     agent any
+
     parameters{
-        choice{name: "version", choices: ["1.0.1","1.0.2"], description: "dude"}
+        choice(name: "version", choices: ['1.0.1','1.0.2','1.0.3'], description: 'choices for version')
         booleanParam(name: "checkflag", defaultValue: true)
-    }  
+    }    
      
     stages{
         stage("get repo and shared"){
