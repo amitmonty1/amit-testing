@@ -5,7 +5,7 @@ pipeline{
             steps{
                 deleteDir()
                 checkout scm
-                echo "dude 11"
+                echo "dude 12"
             }
         }
     }
