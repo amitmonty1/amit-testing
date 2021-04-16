@@ -3,6 +3,8 @@ pipeline{
     stages{
         stage("dude"){
             steps{
+                deleteDir()
+                checkout scm
                 echo "dude 11"
             }
         }
