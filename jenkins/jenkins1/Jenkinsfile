@@ -21,11 +21,12 @@ pipeline{
         }
         stage("build"){
             steps{
-              if(checkflag) { 
-                echo "build me"
-              }
-              else{
-                  echo "kill me"
+              script{  
+                if(checkflag) { 
+                    echo "build me"
+                } else {
+                    echo "kill me"
+                }
               }
             }
         }
